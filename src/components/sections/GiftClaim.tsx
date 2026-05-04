@@ -33,7 +33,7 @@ export function GiftClaim() {
       // Securely insert into the `gifts` table via the Supabase JS client.
       // The client uses VITE_SUPABASE_URL + VITE_SUPABASE_PUBLISHABLE_KEY
       // from env vars (never hardcoded). RLS on `gifts` allows insert-only.
-      const { error } = await supabase.from("gifts").insert(parsed.data);
+      const { error } = await supabase.from("gift_claims").insert(parsed.data);
       if (error) throw error;
       toast.success("🎁 Gift added! Check your WhatsApp shortly.");
       setForm({ full_name: "", phone_number: "", whatsapp_number: "" });
