@@ -72,7 +72,7 @@ export function EnrollDialog({ trigger, defaultBatch = "Online" }: Props) {
       ...parsed.data,
       discount_code: parsed.data.discount_code || null,
     };
-    const { error } = await supabase.from("leads").insert(payload);
+   const { error } = await supabase.from("enrollments").insert(payload);
     setLoading(false);
     if (error) {
       toast.error("সাবমিট করা যায়নি, আবার চেষ্টা করুন।");
